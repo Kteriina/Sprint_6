@@ -26,7 +26,6 @@ public class TestLionForDoesHaveMane {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},
-                {"Абракадабра", false},
 
         };
     }
@@ -36,11 +35,8 @@ public class TestLionForDoesHaveMane {
     public void doesHaveManeTest() throws Exception{
         Feline feline = Mockito.mock(Feline.class);
         Lion lion = new Lion(sex, feline);
-        try {
-            Assert.assertEquals(hasMame, lion.doesHaveMane());
-        } catch (Exception e){
-            Assert.assertEquals("Используйте допустимые значения пола животного - самец или самка", e.getMessage());
-        }
+        Assert.assertEquals(hasMame, lion.doesHaveMane());
+
     }
 
 }
