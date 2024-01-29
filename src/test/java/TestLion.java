@@ -33,4 +33,10 @@ public class TestLion {
         Mockito.when(lionSpy.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         assertEquals(List.of("Животные", "Птицы", "Рыба"), lionSpy.getFood());
     }
+    @Test
+    public void hasManeExceptionTest() throws Exception {
+        Assert.assertThrows(Exception.class, () -> {
+            new Lion("Абракадабра", feline);
+        });
+    }
 }
